@@ -2,13 +2,13 @@ import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 
 export default function Login() {
-  const [formData, setFormData] = useState({email:"",password:""});
+  const [formData, setFormData] = useState({ email: "", password: "" });
   const [error, setError] = useState("");
-  const[success, setSuccess]= useState("");
+  const [success, setSuccess] = useState("");
   const navigate = useNavigate();
 
   const handleLogin = (e) => {
-    setFormData({...formData, [e.target.name]: e.target.value});
+    setFormData({ ...formData, [e.target.name]: e.target.value });
   };
 
   const handleSubmit = async (e) => {
@@ -16,31 +16,37 @@ export default function Login() {
     setError("");
     setSuccess("");
 
+    const trimmedFormData = {
+      email: formData.email.trim(),
+      password: formData.password.trim(), // trim password trước khi gửi
+    };
+
+    console.log("Dữ liệu gửi lên:", trimmedFormData);
+
     try {
-        const response = await fetch ('http://localhost:8000/api/user/login', {
-            method : 'POST',
-            headers : {
-                'Content-Type': 'application/json' ,
-            },
-            body: JSON.stringify(formData),
-        });
+      const response = await fetch("http://localhost:8000/api/user/login", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(trimmedFormData),
+      });
 
-        const data = await response.json();
+      const data = await response.json();
 
-        if(response.ok){
-            setSuccess('Dăng nhập thành công');
-            console.log('Thông tin user:', data);
-            localStorage.setItem('token', data.token);
-      // navigate('/dashboard');
-        }else{
-            setError(data.message || "Đăng nhập thất bại")
-        }
-
+      if (response.ok) {
+        setSuccess("Đăng nhập thành công");
+        console.log("Thông tin user:", data);
+        localStorage.setItem("token", data.token);
+        // navigate('/dashboard');
+      } else {
+        setError(data.message || "Đăng nhập thất bại");
+      }
     } catch (error) {
-        console.error('Lỗi khi gọi API:', error);
-    setError('Đã xảy ra lỗi khi kết nối đến server.');
+      console.error("Lỗi khi gọi API:", error);
+      setError("Đã xảy ra lỗi khi kết nối đến server.");
     }
-  }
+  };
 
   return (
     <div className="flex items-center justify-center min-h-screen bg-gradient-to-r from-blue-200 to-indigo-300">
@@ -93,8 +99,20 @@ export default function Login() {
         </button>
 
         <p className="text-center text-sm text-gray-600 mt-4">
+          <a
+            href="/forgot-password"
+            className="text-indigo-600 font-semibold hover:underline"
+          >
+            Quên mật khẩu?
+          </a>
+        </p>
+
+        <p className="text-center text-sm text-gray-600 mt-4">
           Bạn chưa có tài khoản?{" "}
-          <a href="/register" className="text-indigo-600 font-semibold hover:underline">
+          <a
+            href="/register"
+            className="text-indigo-600 font-semibold hover:underline"
+          >
             Đăng ký
           </a>
         </p>

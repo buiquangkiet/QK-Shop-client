@@ -46,7 +46,7 @@ export const Register = () => {
             body: JSON.stringify(formData)
         });
 
-        const data = response.json();
+        const data = await response.json();
 
         if(response.ok){
             setSuccess("Đăng ký thành công");
