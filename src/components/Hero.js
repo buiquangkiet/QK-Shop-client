@@ -1,34 +1,27 @@
-import React from 'react';
+import React from "react";
+// import heroImage from "../assets/Hero.jpg";
 
 const Hero = () => {
   return (
-    <section className="bg-gray-100">
-      <div className="max-w-7xl mx-auto px-4 py-16 grid grid-cols-1 md:grid-cols-2 items-center gap-8">
-        {/* Text Content */}
-        <div className="text-center md:text-left">
-          <h1 className="text-4xl md:text-5xl font-bold text-gray-900 leading-tight">
-            Khám phá xu hướng mới nhất <br /> cùng <span className="text-indigo-600">ShopStyle</span>
-          </h1>
-          <p className="mt-6 text-gray-700 text-lg">
-            Thời trang đỉnh cao - giá cả phải chăng. Mua sắm ngay hôm nay để nhận ưu đãi hấp dẫn!
-          </p>
-          <div className="mt-8">
-            <a
-              href="#products"
-              className="inline-block bg-indigo-600 text-white px-6 py-3 rounded-xl text-lg font-medium hover:bg-indigo-700 transition"
-            >
-              Mua ngay
-            </a>
-          </div>
-        </div>
+    <section className="relative w-full h-[100vh]">  
+      {/* Background Image */}
+      <img src="/assets/Hero.jpg" alt="Hero" className="w-full h-full object-cover" />
 
-        {/* Image */}
-        <div className="flex justify-center md:justify-end">
-          <img
-            src="https://source.unsplash.com/600x500/?fashion,clothes"
-            alt="Fashion Hero"
-            className="w-full max-w-md rounded-xl shadow-lg"
-          />
+      {/* Overlay layer */}
+      <div className="absolute inset-0 bg-black bg-opacity-50 flex items-center justify-center">
+        <div className="text-center px-4 md:px-8">
+          <h1 className="text-4xl md:text-6xl font-bold text-white mb-4">
+            Khám phá trải nghiệm tuyệt vời
+          </h1>
+          <p className="text-lg md:text-xl text-gray-200 mb-6 max-w-xl mx-auto">
+            Hãy cùng chúng tôi khám phá thế giới tuyệt đẹp với dịch vụ chất
+            lượng và chuyên nghiệp.
+          </p>
+          <div className="flex justify-center gap-4">
+            <button className="border border-gray-300 text-white px-6 py-3 rounded-xl hover:bg-gray-100 hover:text-black transition">
+              Mua ngay
+            </button>
+          </div>
         </div>
       </div>
     </section>

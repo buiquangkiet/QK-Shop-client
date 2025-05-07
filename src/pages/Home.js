@@ -1,5 +1,4 @@
 import React from 'react';
-import MainLayout from '../layout/MainLayout';
 import Hero from '../components/Hero';
 import Categories from '../components/Categories';
 import FeaturedProducts from '../components/FeaturedProducts';
@@ -8,13 +7,13 @@ import NewsLetter from '../components/NewsLetter';
 
 const Home = () => {
   return (
-    <MainLayout>
+    <div>
       <Hero />
       <Categories />
       <FeaturedProducts />
       <PromotionBanner />
       <NewsLetter />
-    </MainLayout>
+    </div>
   );
 };
 
