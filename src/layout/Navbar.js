@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { UserIcon, ShoppingCartIcon, MenuIcon } from "@heroicons/react/outline";
+import { Link } from "react-router-dom";
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -36,7 +37,6 @@ const Navbar = () => {
         >
           <MenuIcon className="h-6 w-6" />
         </button>
-
       </div>
 
       {isOpen && (
@@ -108,19 +108,24 @@ const Navbar = () => {
       )}
 
       <div className="space-x-6">
-        <a href="#" className="hover:text-gray-700 text-gray-500 font-bold">
+      <Link
+          to="/"
+          className="hover:text-gray-700 text-gray-500 font-bold"
+        >
           HOME
-        </a>
-        <a href="#" className="hover:text-gray-700 text-gray-500 font-bold">
+        </Link>
+        <Link
+          to="/products"
+          className="hover:text-gray-700 text-gray-500 font-bold"
+        >
           SẢN PHẨM
-        </a>
+        </Link>
         <a href="#" className="hover:text-gray-700 text-gray-500 font-bold">
           LIÊN HỆ
         </a>
         <a href="#" className="hover:text-gray-700 text-gray-500 font-bold">
           VỀ CHÚNG TÔI
         </a>
-        
       </div>
       <div className="flex items-center space-x-4">
         {/* Tìm kiếm */}

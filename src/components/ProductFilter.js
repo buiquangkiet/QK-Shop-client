@@ -127,7 +127,7 @@ const ProductFilter = ({ onFilterChange }) => {
         }}
         title={color.name} // tooltip hiển thị tên màu
       >
-        {color.name === "Tất cả" ? "" : ""}
+        {color.name === "Tất cả" ? "X" : ""}
       </button>
     ))}
   </div>
