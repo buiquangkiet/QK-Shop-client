@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom';
 const PromotionBanner = () => {
   return (
     <section
-      className="relative overflow-hidden min-h-[600px] py-20 px-6 text-white text-center rounded-3xl shadow-2xl my-12 flex items-center justify-center"
+      className="relative overflow-hidden min-h-[600px] py-20 px-6 text-white text-center  shadow-2xl my-12 flex items-center justify-center"
       role="banner"
       aria-labelledby="promotion-title"
       style={{

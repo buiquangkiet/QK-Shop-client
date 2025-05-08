@@ -1,0 +1,32 @@
+export const productData = [{
+    id: "p01",
+    name: "Áo bóng đá thun God of Thunder",
+    image: "https://i.pinimg.com/736x/c8/09/80/c80980a8a8b0330ed7a921bf0d052353.jpg",
+    originalPrice: 400000,
+    discountPrice: 320000,
+    colors: ["red", "white", "blue"],
+  },
+  {
+    id: "p02",
+    name: "Áo bóng đá CLB Manchester United",
+    image: "https://i.pinimg.com/736x/c8/09/80/c80980a8a8b0330ed7a921bf0d052353.jpg",
+    originalPrice: 500000,
+    discountPrice: 450000,
+    colors: ["red", "black", "white"],
+  },
+  {
+    id: "p03",
+    name: "Giày thể thao Adidas",
+    image: "https://i.pinimg.com/736x/c8/09/80/c80980a8a8b0330ed7a921bf0d052353.jpg",
+    originalPrice: 1200000,
+    discountPrice: 1000000,
+    colors: ["blue", "black", "white"],
+  },
+  {
+    id: "p04",
+    name: "Áo bóng đá CLB Chelsea",
+    image: "https://i.pinimg.com/736x/c8/09/80/c80980a8a8b0330ed7a921bf0d052353.jpg",
+    originalPrice: 450000,
+    discountPrice: 380000,
+    colors: ["blue", "yellow"],
+  }]

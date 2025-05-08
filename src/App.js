@@ -8,6 +8,8 @@ import VerifyOTP from './pages/VerifyOTP';
 import ResetPassword from './pages/ResetPassword';
 import MainLayout from './layout/MainLayout';
 import Home from './pages/Home';
+import Product from './pages/Product';
+import ProductDetail from './pages/ProductDetail';
 
 
 
@@ -21,7 +23,9 @@ function App() {
     <Route element={<MainLayout />}>
           <Route path='/' element={<Home />} />
           {/* Bạn có thể thêm nhiều trang tại đây như: Shop, Contact, Profile... */}
-        </Route>
+          <Route path='/products' element={<Product/>}/>
+          <Route path="/product/:id" element={<ProductDetail />} />
+    </Route>
 
 
       <Route path='/login' element={<Login/>}/>

@@ -109,13 +109,16 @@ const Navbar = () => {
 
       <div className="space-x-6">
         <a href="#" className="hover:text-gray-700 text-gray-500 font-bold">
-          NỮ
+          HOME
         </a>
         <a href="#" className="hover:text-gray-700 text-gray-500 font-bold">
-          NAM
+          SẢN PHẨM
         </a>
         <a href="#" className="hover:text-gray-700 text-gray-500 font-bold">
-          TRẺ EM
+          LIÊN HỆ
+        </a>
+        <a href="#" className="hover:text-gray-700 text-gray-500 font-bold">
+          VỀ CHÚNG TÔI
         </a>
         
       </div>
