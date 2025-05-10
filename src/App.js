@@ -10,6 +10,7 @@ import MainLayout from './layout/MainLayout';
 import Home from './pages/Home';
 import Product from './pages/Product';
 import ProductDetail from './pages/ProductDetail';
+import Cart from './pages/Cart';
 
 
 
@@ -25,6 +26,7 @@ function App() {
           {/* Bạn có thể thêm nhiều trang tại đây như: Shop, Contact, Profile... */}
           <Route path='/products' element={<Product/>}/>
           <Route path="/product/:id" element={<ProductDetail />} />
+          <Route path='/cart' element={<Cart/>}/>
     </Route>
 
 

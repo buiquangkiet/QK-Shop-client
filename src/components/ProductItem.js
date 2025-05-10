@@ -1,17 +1,25 @@
 import React from "react";
 import { useNavigate } from "react-router-dom";
 
-const ProductItem = ({ product }) => {
+const ProductItem = ({ product, onAddToCart }) => {
   const navigate = useNavigate();
 
   const handleClick = () => {
+    // Chuyển hướng đến trang chi tiết sản phẩm
     navigate(`/product/${product.id}`);
   };
+
+  // const handleAddToCart = (e) => {
+  //   e.stopPropagation(); // Ngừng sự kiện lan lên container
+  //   if (onAddToCart) {
+  //     onAddToCart(product); // Thêm sản phẩm vào giỏ hàng
+  //   }
+  // };
 
   return (
     <div
       className="flex flex-col border rounded-xl overflow-hidden shadow-md bg-white hover:shadow-lg transition duration-300 h-[500px] cursor-pointer"
-      onClick={handleClick}
+      onClick={handleClick} // Điều hướng tới trang chi tiết sản phẩm khi click vào sản phẩm
     >
       <div className="w-full h-80">
         <img
@@ -55,10 +63,7 @@ const ProductItem = ({ product }) => {
         </div>
 
         <button
-          onClick={(e) => {
-            e.stopPropagation(); // Ngăn click lan lên container
-            console.log("Thêm vào giỏ:", product);
-          }}
+          onClick={handleClick} // Thêm vào giỏ hàng khi click vào nút
           className="mt-auto w-full bg-blue-600 hover:bg-blue-700 text-white py-2 rounded-md text-sm font-medium transition"
         >
           Thêm vào giỏ

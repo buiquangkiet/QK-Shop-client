@@ -108,10 +108,7 @@ const Navbar = () => {
       )}
 
       <div className="space-x-6">
-      <Link
-          to="/"
-          className="hover:text-gray-700 text-gray-500 font-bold"
-        >
+        <Link to="/" className="hover:text-gray-700 text-gray-500 font-bold">
           HOME
         </Link>
         <Link
@@ -120,10 +117,8 @@ const Navbar = () => {
         >
           SẢN PHẨM
         </Link>
-        <a href="#" className="hover:text-gray-700 text-gray-500 font-bold">
-          LIÊN HỆ
-        </a>
-        <a href="#" className="hover:text-gray-700 text-gray-500 font-bold">
+        <a className="hover:text-gray-700 text-gray-500 font-bold">LIÊN HỆ</a>
+        <a className="hover:text-gray-700 text-gray-500 font-bold">
           VỀ CHÚNG TÔI
         </a>
       </div>
@@ -179,22 +174,20 @@ const Navbar = () => {
         </div>
 
         {/* Tài khoản */}
-        <a
-          href="#"
-          className="flex items-center space-x-1 hover:text-gray-700 font-bold"
-        >
+        <a className="flex items-center space-x-1 hover:text-gray-700 font-bold">
           <UserIcon className="w-6 h-6" />
           {/* <span>Account</span> */}
         </a>
 
         {/* Giỏ hàng */}
-        <a
-          href="#"
-          className="flex items-center space-x-1 hover:text-gray-700 font-bold"
-        >
-          <ShoppingCartIcon className="w-6 h-6" />
-          {/* <span>Cart</span> */}
-        </a>
+        <div>
+          <Link
+            to="/cart"
+            className="flex items-center space-x-1 hover:text-gray-700 font-bold"
+          >
+            <ShoppingCartIcon className="w-6 h-6" />
+          </Link>
+        </div>
       </div>
     </nav>
   );

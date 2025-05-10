@@ -13,14 +13,32 @@ const ProductDetail = () => {
   if (!product) return <div className="text-center text-xl mt-10">❌ Không tìm thấy sản phẩm.</div>;
 
   const handleAddToCart = () => {
-    const item = {
-      ...product,
-      selectedColor,
-      selectedSize,
-      quantity,
-    };
-    console.log('🛒 Thêm vào giỏ:', item);
+  const item = {
+    ...product,
+    selectedColor,
+    selectedSize,
+    quantity,
   };
+
+  const cart = JSON.parse(localStorage.getItem("cart")) || [];
+
+  const existing = cart.find(
+    (p) =>
+      p.id === product.id &&
+      p.selectedColor === selectedColor &&
+      p.selectedSize === selectedSize
+  );
+
+  if (existing) {
+    existing.quantity += quantity;
+  } else {
+    cart.push(item);
+  }
+
+  localStorage.setItem("cart", JSON.stringify(cart));
+  alert("🛒 Đã thêm vào giỏ hàng!");
+};
+
 
   return (
     <div className="max-w-6xl mx-auto p-6 grid grid-cols-1 md:grid-cols-2 gap-8">
